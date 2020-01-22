@@ -1,3 +1,6 @@
 [submodule "dashboard-vue"]
 	path = dashboard-vue
 	url = https://github.com/CNAB-Moonraker/dashboard-vue.git
+[submodule "cli"]
+	path = cli
+	url = https://github.com/CNAB-Moonraker/cli.git
