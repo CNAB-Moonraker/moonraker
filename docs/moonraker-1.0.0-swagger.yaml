@@ -1,11 +1,11 @@
 openapi: 3.0.0
 info:
   description: Moonraker API
-  version: 1.0.0
+  version: "1.0.0"
   title: CNAB Moonraker API
   license:
     name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
 tags:
   - name: getters
     description: All endpoints to retrieve data
@@ -14,36 +14,52 @@ paths:
     get:
       tags:
         - getters
-      summary: gets claims.json file
+      summary: gets claims.json files from porter, docker-app, and duffle
       operationId: claims
       description: |
         Get all claims
       responses:
-        200:
+        '200':
           description: claims returned
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Claim"
-        400:
+                type: object
+                properties:
+                  porter:
+                    type: array
+                    items: 
+                      $ref: '#/components/schemas/Claim'
+                  duffle:
+                    type: array
+                    items: 
+                      $ref: '#/components/schemas/Claim'
+                  docker-app:
+                    type: array
+                    items: 
+                      $ref: '#/components/schemas/Claim'
+                required:
+                  - porter
+                  - duffle
+                  - docker-app
+                  
+        '400':
           description: bad request
           content:
             application/json:
               schema:
                 type: object
                 items:
-                  $ref: "#/components/schemas/Error"
-
-        500:
+                  $ref: '#/components/schemas/Error'
+                  
+        '500':
           description: server error
           content:
             application/json:
               schema:
                 type: object
                 items:
-                  $ref: "#/components/schemas/Error"
+                  $ref: '#/components/schemas/Error'
 components:
   schemas:
     Claim:
@@ -113,9 +129,6 @@ components:
           description: An ULID that MUST change each time the release is modified.
     Error:
       type: object
-      required:
-        - error
-        - message
       properties:
         error:
           type: string
@@ -123,6 +136,9 @@ components:
         message:
           type: string
           description: error message
+      required:
+       - error
+       - message
 # Added by API Auto Mocking Plugin
 servers:
   - description: SwaggerHub API Auto Mocking
