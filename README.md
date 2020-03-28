@@ -1,16 +1,16 @@
 # Moonraker
 
+<p align="center">
 <img width="650" height="450" src="docs/assets/dashboard.png">
+<p>
 
 ## What is Moonraker?
 
 Moonraker is a visualization tool for Cloud Native Application Bundles that watches the claims files produced by Porter, Duffle and Docker-App, and then aggregates the data provided into digestible metrics in the form of a dashboard.
 
----
-
 ## How do I use it?
 
-## Prerequisites
+### Prerequisites
 
 - [NodeJS and NPM](https://nodejs.org/en/)
 
