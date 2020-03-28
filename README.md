@@ -1,14 +1,10 @@
-# Moonraker Documentation
-
----
-
 ## What is Moonraker?
 
 Moonraker is a visualization tool for Cloud Native Application Bundles that watches the claims files produced by Porter, Duffle and Docker-App, and then aggregates the data provided into digestible metrics in the form of a dashboard.
 
 ---
 
-## How do I use Moonraker?
+## How do I use it?
 
 ## Prerequisites
 
@@ -80,5 +76,3 @@ For other visualization tools, you can consume claims in JSON format via `localh
 ### Customizing the Dashboard Layout
 
 Drag and drop the Moonraker dashboard tiles to customize the layout. To make a tile bigger or smaller, click on the bottom right corner of the tile and resize. To reset the dashboard layout, click on the settings icon in the upper right corner of the screen and click "Reset Dashboard". 
-
----
